@@ -60,11 +60,11 @@ fun SplashScreen(viewModel: BrowserViewModel) {
             modifier = Modifier.padding(24.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.khoj_launcher_icon),
+                painter = painterResource(id = R.drawable.khoj_brand_logo),
                 contentDescription = "KHOJ Logo",
                 modifier = Modifier
-                    .size(100.dp)
-                    .clip(RoundedCornerShape(24.dp))
+                    .size(108.dp)
+                    .clip(RoundedCornerShape(26.dp))
             )
             Spacer(modifier = Modifier.height(24.dp))
             Text(
@@ -121,11 +121,11 @@ fun WelcomeScreen(viewModel: BrowserViewModel) {
                     modifier = Modifier.padding(top = 8.dp)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.khoj_launcher_icon),
+                        painter = painterResource(id = R.drawable.khoj_brand_logo),
                         contentDescription = "KHOJ Logo",
                         modifier = Modifier
-                            .size(36.dp)
-                            .clip(RoundedCornerShape(8.dp))
+                            .size(38.dp)
+                            .clip(RoundedCornerShape(10.dp))
                     )
                     Spacer(modifier = Modifier.width(10.dp))
                     Text(
@@ -138,17 +138,17 @@ fun WelcomeScreen(viewModel: BrowserViewModel) {
 
                 Spacer(modifier = Modifier.height(20.dp))
 
-                // Original 2D KHOJ Mascot Illustration
+                // Professional Characters Illustration
                 Card(
-                    shape = RoundedCornerShape(24.dp),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+                    shape = RoundedCornerShape(20.dp),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(240.dp)
+                        .height(220.dp)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.img_khoj_mascot),
-                        contentDescription = "KHOJ Explorer Mascot",
+                        painter = painterResource(id = R.drawable.img_welcome_characters),
+                        contentDescription = "Welcome to KHOJ",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
                     )

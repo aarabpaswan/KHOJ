@@ -1,5 +1,6 @@
 package com.example.ui.screens
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -40,6 +41,10 @@ fun SearchResultsScreen(viewModel: BrowserViewModel) {
     var input by remember(query) { mutableStateOf(query) }
     val focusManager = LocalFocusManager.current
     val categories = listOf("All", "News", "Videos", "Code", "Images")
+
+    BackHandler {
+        viewModel.navigateTo(KhojScreen.HOME)
+    }
 
     Scaffold(
         topBar = {

@@ -1,5 +1,6 @@
 package com.example.ui.screens
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -37,6 +38,10 @@ fun BookmarksScreen(viewModel: BrowserViewModel) {
     var searchQuery by remember { mutableStateOf("") }
     val filteredBookmarks = if (searchQuery.isBlank()) bookmarks else bookmarks.filter {
         it.title.contains(searchQuery, ignoreCase = true) || it.url.contains(searchQuery, ignoreCase = true)
+    }
+
+    BackHandler {
+        viewModel.navigateTo(KhojScreen.HOME)
     }
 
     Scaffold(

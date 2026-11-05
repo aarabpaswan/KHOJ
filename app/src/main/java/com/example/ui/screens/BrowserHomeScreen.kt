@@ -68,10 +68,10 @@ fun BrowserHomeScreen(viewModel: BrowserViewModel) {
                     modifier = Modifier.clickable { viewModel.navigateTo(KhojScreen.HOME) }
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.khoj_launcher_icon),
+                        painter = painterResource(id = R.drawable.khoj_brand_logo),
                         contentDescription = "KHOJ Logo",
                         modifier = Modifier
-                            .size(32.dp)
+                            .size(34.dp)
                             .clip(RoundedCornerShape(8.dp))
                     )
                     Spacer(modifier = Modifier.width(8.dp))

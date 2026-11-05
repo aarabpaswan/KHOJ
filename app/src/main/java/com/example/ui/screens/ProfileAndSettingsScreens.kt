@@ -344,11 +344,11 @@ fun SettingsScreen(viewModel: BrowserViewModel) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.khoj_launcher_icon),
+                        painter = painterResource(id = R.drawable.khoj_brand_logo),
                         contentDescription = "KHOJ Logo",
                         modifier = Modifier
-                            .size(48.dp)
-                            .clip(RoundedCornerShape(12.dp))
+                            .size(52.dp)
+                            .clip(RoundedCornerShape(14.dp))
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text("KHOJ Browser 1.0.0", fontWeight = FontWeight.Bold, fontSize = 15.sp)
