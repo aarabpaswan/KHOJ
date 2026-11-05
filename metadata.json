@@ -1,0 +1,6 @@
+{
+  "name": "KHOJ Browser",
+  "description": "Your Internet. Your Discovery. Born in Nepal, built for the world.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
