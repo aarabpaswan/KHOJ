@@ -121,14 +121,12 @@ jobs:
           TAG_NAME="debug-apk-build-${{ github.run_number }}-${{ github.run_attempt }}"
           TITLE="Debug APK Build #${{ github.run_number }}"
 
-          cat << 'EOF' > release_notes.md
-### KHOJ Browser - Debug APK Build
-- Automatically generated debug APK built by GitHub Actions.
-- **Workflow Run Number:** ${{ github.run_number }}
-- **Run Attempt:** ${{ github.run_attempt }}
-- **Commit:** `${{ github.sha }}`
-- **Notice:** This APK is intended for testing and development. It is signed only with a temporary debug keystore and is not a Play Store production release.
-EOF
+          echo "### KHOJ Browser - Debug APK Build" > release_notes.md
+          echo "- Automatically generated debug APK built by GitHub Actions." >> release_notes.md
+          echo "- Workflow Run Number: ${{ github.run_number }}" >> release_notes.md
+          echo "- Run Attempt: ${{ github.run_attempt }}" >> release_notes.md
+          echo "- Commit: ${{ github.sha }}" >> release_notes.md
+          echo "- Notice: This APK is intended for testing. Signed only with temporary debug keystore." >> release_notes.md
 
           gh release create "$TAG_NAME" "$ASSET_FILE" \
             --title "$TITLE" \
@@ -145,8 +143,8 @@ EOF
             echo "GitHub Release published successfully."
             gh release view "debug-apk-build-${{ github.run_number }}-${{ github.run_attempt }}"
             DIRECT_URL="https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/app-debug.apk"
-            echo "### DIRECT APK DOWNLOAD" >> $GITHUB_STEP_SUMMARY
-            echo "[Download app-debug.apk]($DIRECT_URL)" >> $GITHUB_STEP_SUMMARY
+            echo "### DIRECT APK DOWNLOAD" >> "$GITHUB_STEP_SUMMARY"
+            echo "[Download app-debug.apk]($DIRECT_URL)" >> "$GITHUB_STEP_SUMMARY"
             echo "Direct URL: $DIRECT_URL"
             echo "Backup Actions artifact 'app-debug-apk' remains available."
           else
